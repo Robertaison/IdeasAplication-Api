@@ -1,0 +1,10 @@
+package br.com.thought.ideas.repository;
+
+
+import br.com.thought.ideas.domain.ThoughtEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ThoughtRepository extends JpaRepository<ThoughtEntity, Long> {
+}
