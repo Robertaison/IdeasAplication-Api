@@ -4,7 +4,6 @@ import br.com.thought.ideas.domain.ThoughtEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import org.springframework.stereotype.Component;
 
 @Mapper(componentModel = "spring")
 public interface ThoughtMapper {
