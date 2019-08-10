@@ -17,5 +17,7 @@ public class ThoughtResponseDTO {
 
     public String humor;
 
+    private String author;
+
     public String data;
 }

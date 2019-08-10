@@ -15,11 +15,6 @@ public class ThoughtController {
     @Autowired
     private ThoughtServiceImpl thoughtService;
 
-    @GetMapping("/{id}")
-    public ThoughtResponseDTO findById(@PathVariable final Long id) {
-        return thoughtService.findById(id);
-    }
-
     @GetMapping
     public List<ThoughtResponseDTO> findAll() {
         return thoughtService.retrieveAllThoughts();
@@ -31,8 +26,13 @@ public class ThoughtController {
         thoughtService.save(thought);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteThought(@PathVariable long id) {
-        thoughtService.delete(id);
-    }
+//    @GetMapping("/{id}")
+//    public ThoughtResponseDTO findById(@PathVariable final Long id) {
+//        return thoughtService.findById(id);
+//    }
+
+//    @DeleteMapping("/{id}")
+//    public void deleteThought(@PathVariable long id) {
+//        thoughtService.delete(id);
+//    }
 }
