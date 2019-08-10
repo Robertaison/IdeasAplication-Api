@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 
 @Data
@@ -27,9 +28,12 @@ public class ThoughtEntity {
 
     private String title;
 
+    @NotNull
     private String description;
 
     private String humor;
+
+    private String author;
 
     @CreationTimestamp
     @DateTimeFormat(pattern = "pattern = dd/mm/yyyy HH:mm")

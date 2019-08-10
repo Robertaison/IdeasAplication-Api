@@ -20,4 +20,5 @@ public class ThoughtRequestDTO {
     @NotEmpty
     private String description;
 
+    private String author;
 }

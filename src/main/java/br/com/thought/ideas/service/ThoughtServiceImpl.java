@@ -35,8 +35,10 @@ public class ThoughtServiceImpl {
 
     @Transactional(readOnly = true)
     public List<ThoughtResponseDTO> retrieveAllThoughts() {
+
         List<ThoughtEntity> thoughts = thoughtRepository.findAll();
         List<ThoughtResponseDTO> response = new ArrayList<>();
+
         for(ThoughtEntity thought: thoughts){
             response.add(thoughtMapper.convertToResponse(thought));
         }
@@ -59,8 +61,6 @@ public class ThoughtServiceImpl {
         ThoughtResponseDTO reponse = thoughtMapper.convertToResponse(persisted);
         return reponse;
     }
-
-
 
     @Transactional
     public void delete(long id) {
