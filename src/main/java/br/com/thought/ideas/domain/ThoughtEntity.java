@@ -12,14 +12,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 
 @Data
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "Thought")
 public class ThoughtEntity {
 
     @Id
@@ -28,7 +27,6 @@ public class ThoughtEntity {
 
     private String title;
 
-    @NotNull
     private String description;
 
     private String humor;
