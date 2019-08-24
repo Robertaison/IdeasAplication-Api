@@ -1,15 +1,15 @@
 # IdeasApplication-Api
 
-## Is a Java Web API that is able to record and expose shared ideas.
+### Is a Java Web API that is able to record and expose shared ideas.
 
-### *The intention of this application is to explore Java languange and some frameworks as a resource for a university project*
+### The intention of this application is to explore Java languange and some frameworks as a resource for a university project
 
-#### *Technologies:*
+## *Technologies:*
 
-#### Language: 
+### Language: 
 > *Java 8* 
 
-#### Frameworks:
+### Frameworks:
 >- Lombok
 >- MapStruct
 >- Spring
@@ -17,10 +17,10 @@
 >>- Spring Boot
 >>- Spring Web Starter
 
-#### Cloud Server
+### Cloud Server
 > *Heroku*
 
-#### Database
+### Database
 > *Postgres*
 
 ##### *This API is onlyne and can be accessed using this URL:*
