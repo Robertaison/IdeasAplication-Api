@@ -11,11 +11,11 @@
 
 #### Frameworks:
 > *Lombok
-> *MapStruct
-> *Spring
+ *MapStruct
+ *Spring
 >> *Spring DATA JPA
->> *Spring Boot
->> *Spring Web Starter
+ *Spring Boot
+ *Spring Web Starter
 
 #### Cloud Server
 > *Heroku*
