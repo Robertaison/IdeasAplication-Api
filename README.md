@@ -10,9 +10,9 @@
 > *Java 8* 
 
 #### Frameworks:
-- Lombok
-- MapStruct
-- Spring
+> Lombok
+> MapStruct
+> Spring
 >- Spring DATA JPA
 >- Spring Boot
 >- Spring Web Starter
