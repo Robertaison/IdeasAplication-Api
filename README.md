@@ -13,7 +13,7 @@
 - Lombok
 - MapStruct
 - Spring
-- Spring DATA JPA
+>- Spring DATA JPA
 - Spring Boot
 - Spring Web Starter
 
