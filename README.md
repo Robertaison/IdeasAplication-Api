@@ -18,10 +18,10 @@
 >- Spring Web Starter
 
 ### Cloud Server
-> Heroku
+- Heroku
 
 ### Database
-> Postgres
+- Postgres
 
 ##### *This API is onlyne and can be accessed using this URL:*
 > [sharingideas](https://sharing-ideas-api.herokuapp.com/)
