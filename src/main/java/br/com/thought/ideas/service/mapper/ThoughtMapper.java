@@ -15,7 +15,7 @@ public interface ThoughtMapper {
     ThoughtEntity convertToEntity(ThoughtRequestDTO thoughtRequestDTO);
 
     @Mappings({
-            @Mapping(target = "data", dateFormat = "dd/mm/yyyy HH:mm")
+            @Mapping(target = "data", dateFormat = "dd/MM/yyyy HH:mm")
     })
     ThoughtResponseDTO convertToResponse(ThoughtEntity thoughtEntity);
 }
