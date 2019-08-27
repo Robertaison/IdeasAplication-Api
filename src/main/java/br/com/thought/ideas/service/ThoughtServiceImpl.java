@@ -24,7 +24,7 @@ public class ThoughtServiceImpl {
 
     public void save(final ThoughtRequestDTO request) {
         if (request.getAuthor().isEmpty() || request.getAuthor() == null){
-            request.setAuthor("Anônimo");
+            request.setAuthor("AnÃ´nimo");
         }
         ThoughtResponseDTO toPersist = persist(request);
     }

@@ -15,12 +15,12 @@ public class ThoughtController {
     @Autowired
     private ThoughtServiceImpl thoughtService;
 
-    @GetMapping
+    @GetMapping("/ideas")
     public List<ThoughtResponseDTO> findAll() {
         return thoughtService.retrieveAllThoughts();
     }
 
-    @PostMapping()
+    @PostMapping("/share")
     public void save(@Valid @RequestBody final ThoughtRequestDTO thought) {
 
         thoughtService.save(thought);

@@ -8,6 +8,10 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface ThoughtMapper {
 
+    @Mappings({
+            @Mapping(target = "id", ignore = true),
+            @Mapping(target = "data", ignore = true)
+    })
     ThoughtEntity convertToEntity(ThoughtRequestDTO thoughtRequestDTO);
 
     @Mappings({
