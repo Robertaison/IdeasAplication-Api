@@ -43,6 +43,7 @@ public class SwaggerConfig {
         return apiInfoBuilder;
 
     }
+
     private Contact contato() {
 
         return new Contact(

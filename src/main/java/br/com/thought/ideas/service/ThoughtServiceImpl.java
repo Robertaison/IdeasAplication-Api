@@ -23,16 +23,10 @@ public class ThoughtServiceImpl {
     private ThoughtMapper thoughtMapper;
 
     public void save(final ThoughtRequestDTO request) {
-        if (request.getAuthor().isEmpty() || request.getAuthor() == null){
+        if (request.getAuthor().isEmpty() || request.getAuthor() == null) {
             request.setAuthor("Anônimo");
         }
         ThoughtResponseDTO toPersist = persist(request);
-    }
-
-    public ThoughtResponseDTO findById(final Long id){
-
-        ThoughtResponseDTO thought = retriveThoughtById(id);
-        return thought;
     }
 
     @Transactional(readOnly = true)
@@ -41,31 +35,18 @@ public class ThoughtServiceImpl {
         List<ThoughtEntity> thoughts = thoughtRepository.findAllByOrderByDataDesc();
         List<ThoughtResponseDTO> response = new ArrayList<>();
 
-        for(ThoughtEntity thought: thoughts){
+        for (ThoughtEntity thought : thoughts) {
             response.add(thoughtMapper.convertToResponse(thought));
         }
         return response;
     }
 
-    @Transactional(readOnly = true)
-    public ThoughtResponseDTO retriveThoughtById(final Long id) {
-
-        ThoughtEntity thoughtEntity = thoughtRepository.findById(id).orElse(null);
-        ThoughtResponseDTO response = thoughtMapper.convertToResponse(thoughtEntity);
-        return response;
-    }
-
     @Transactional
-    public ThoughtResponseDTO persist (final ThoughtRequestDTO thoughtRequestDTO){
+    public ThoughtResponseDTO persist(final ThoughtRequestDTO thoughtRequestDTO) {
         ThoughtEntity thoughtEntity = thoughtMapper.convertToEntity(thoughtRequestDTO);
         ThoughtEntity persisted = thoughtRepository.save(thoughtEntity);
 
         ThoughtResponseDTO reponse = thoughtMapper.convertToResponse(persisted);
         return reponse;
-    }
-
-    @Transactional
-    public void delete(long id) {
-        thoughtRepository.deleteById(id);
     }
 }
