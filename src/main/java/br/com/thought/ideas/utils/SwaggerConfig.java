@@ -38,7 +38,7 @@ public class SwaggerConfig {
         apiInfoBuilder.termsOfServiceUrl("Termo de uso: Deve ser usada para estudos.");
         apiInfoBuilder.license("Licença - Open Source");
         apiInfoBuilder.licenseUrl("https://www.linkedin.com/in/robertson-dc-souza/");
-        apiInfoBuilder.contact(this.contato());
+        apiInfoBuilder.contact(contato());
 
         return apiInfoBuilder;
 
@@ -47,7 +47,7 @@ public class SwaggerConfig {
 
         return new Contact(
                 "Robertson souza",
-                "",
-                "");
+                "https://www.linkedin.com/in/robertson-dc-souza/",
+                "roberts.sbeer@gmail.com");
     }
 }
