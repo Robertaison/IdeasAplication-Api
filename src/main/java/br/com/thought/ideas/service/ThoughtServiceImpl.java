@@ -23,7 +23,9 @@ public class ThoughtServiceImpl {
     private ThoughtMapper thoughtMapper;
 
     public void save(final ThoughtRequestDTO request) {
-
+        if (request.getAuthor().isEmpty() || request.getAuthor() == null){
+            request.setAuthor("Anônimo");
+        }
         ThoughtResponseDTO toPersist = persist(request);
     }
 
@@ -36,7 +38,7 @@ public class ThoughtServiceImpl {
     @Transactional(readOnly = true)
     public List<ThoughtResponseDTO> retrieveAllThoughts() {
 
-        List<ThoughtEntity> thoughts = thoughtRepository.findAll();
+        List<ThoughtEntity> thoughts = thoughtRepository.findAllByOrderByDataDesc();
         List<ThoughtResponseDTO> response = new ArrayList<>();
 
         for(ThoughtEntity thought: thoughts){
