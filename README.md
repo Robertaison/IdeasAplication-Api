@@ -2,7 +2,7 @@
 
 #### Is a Java Web API that is able to record and expose shared ideas.
 
-#### The intention of this application is to explore Java languange and some frameworks as a resource for a university project
+#### The intention of this application is to explore Java languange and some frameworks as a resource for an university project
 
 ## *Technologies:*
 
