@@ -35,9 +35,8 @@ public class SwaggerConfig {
         apiInfoBuilder.title("Ideas");
         apiInfoBuilder.description("Api para compartilhamento de ideias");
         apiInfoBuilder.version("1.0");
-        apiInfoBuilder.termsOfServiceUrl("Termo de uso: Deve ser usada para estudos.");
-        apiInfoBuilder.license("Licença - Open Source");
-        apiInfoBuilder.licenseUrl("https://www.linkedin.com/in/robertson-dc-souza/");
+        apiInfoBuilder.license("License - Open Source");
+        apiInfoBuilder.licenseUrl("https://github.com/Robertaison/IdeasApplication-Api/blob/master/LICENSE.md");
         apiInfoBuilder.contact(contato());
 
         return apiInfoBuilder;
@@ -47,7 +46,7 @@ public class SwaggerConfig {
     private Contact contato() {
 
         return new Contact(
-                "Robertson souza",
+                "Robertson",
                 "https://www.linkedin.com/in/robertson-dc-souza/",
                 "roberts.sbeer@gmail.com");
     }

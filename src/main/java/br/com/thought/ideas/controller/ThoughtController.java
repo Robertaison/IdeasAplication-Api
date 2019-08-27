@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.List;
 
-@Api(value = "Api responsável por salvar e exibir ideias")
+@Api(value = "Api responsável por salvar e exibir ideias", tags = "Ideas Controller")
 @RestController
 public class ThoughtController {
 
