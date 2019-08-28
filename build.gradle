@@ -56,7 +56,7 @@ dependencies {
 	implementation "org.mapstruct:mapstruct-processor:$mapstructVersion"
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: "$swaggerVersion"
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: "$swaggerVersion"
 }

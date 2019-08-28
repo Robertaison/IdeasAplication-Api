@@ -7,6 +7,7 @@ import br.com.thought.ideas.service.mapper.ThoughtMapper;
 import br.com.thought.ideas.service.mapper.ThoughtRequestDTO;
 import br.com.thought.ideas.service.mapper.ThoughtResponseDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,13 +32,14 @@ public class ThoughtServiceImpl {
         ThoughtResponseDTO toPersist = persist(request);
     }
 
+
     @Transactional(readOnly = true)
     public List<ThoughtResponseDTO> retrieveAllThoughts() {
 
         List<ThoughtEntity> thoughts = thoughtRepository.findAllByOrderByDataDesc();
         List<ThoughtResponseDTO> response = new ArrayList<>();
 
-        for (ThoughtEntity thought : thoughts) {
+        for(ThoughtEntity thought: thoughts){
             response.add(thoughtMapper.convertToResponse(thought));
         }
         log.info("retrieveAllThoughts, foram encontrados {} registros de ideas.", response.size());
@@ -45,7 +47,10 @@ public class ThoughtServiceImpl {
     }
 
     @Transactional
-    public ThoughtResponseDTO persist(final ThoughtRequestDTO thoughtRequestDTO) {
+    private ThoughtResponseDTO persist (final ThoughtRequestDTO thoughtRequestDTO){
+
+        treatHtmlAndJsInjection(thoughtRequestDTO);
+
         ThoughtEntity thoughtEntity = thoughtMapper.convertToEntity(thoughtRequestDTO);
         ThoughtEntity persisted = thoughtRepository.save(thoughtEntity);
 
@@ -53,5 +58,25 @@ public class ThoughtServiceImpl {
         ThoughtResponseDTO reponse = thoughtMapper.convertToResponse(persisted);
         log.info("persist, objeto criado = {}", reponse);
         return reponse;
+    }
+
+    @Transactional
+    public void delete(long id) {
+        thoughtRepository.deleteById(id);
+    }
+
+    private static void treatHtmlAndJsInjection (ThoughtRequestDTO thoughtRequestDTO){
+
+        String descriptionHtml = StringEscapeUtils.escapeHtml4(thoughtRequestDTO.getDescription());
+        String tittleHtml = StringEscapeUtils.escapeHtml4(thoughtRequestDTO.getTitle());
+        String authorHtml = StringEscapeUtils.escapeHtml4(thoughtRequestDTO.getAuthor());
+
+        String descriptionJS = StringEscapeUtils.escapeEcmaScript(descriptionHtml);
+        String tittleJs = StringEscapeUtils.escapeEcmaScript(tittleHtml);
+        String authorJs = StringEscapeUtils.escapeEcmaScript(authorHtml);
+
+        thoughtRequestDTO.setTitle(tittleJs);
+        thoughtRequestDTO.setDescription(descriptionJS);
+        thoughtRequestDTO.setAuthor(authorJs);
     }
 }
