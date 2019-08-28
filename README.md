@@ -24,5 +24,10 @@
 ### Database
 - Postgres
 
-##### *You can use this application by swagger:*
+##### API Documentation *(By swagger)*
 > [sharingideas](https://sharing-ideas-api.herokuapp.com/swagger-ui.html)
+
+##### You can easy consume the list of ideas here
+>[sharingideas/ideas](https://sharing-ideas-api.herokuapp.com/ideas)
+
+
