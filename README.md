@@ -12,6 +12,7 @@
 ### Frameworks:
 - Lombok
 - MapStruct
+- Swagger
 - Spring
 >- Spring DATA JPA
 >- Spring Boot
@@ -23,5 +24,10 @@
 ### Database
 - Postgres
 
-##### *This API is onlyne and can be accessed using this URL:*
-> [sharingideas](https://sharing-ideas-api.herokuapp.com/)
+##### API Documentation *(By swagger)*
+> [sharingideas](https://sharing-ideas-api.herokuapp.com/swagger-ui.html)
+
+##### You can easy consume the list of ideas here
+>[sharingideas/ideas](https://sharing-ideas-api.herokuapp.com/ideas)
+
+
